@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'demo_auth.dart';
 import 'login_screen.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -28,6 +29,7 @@ class ProfilePage extends StatelessWidget {
     );
 
     if (shouldLogout == true && context.mounted) {
+      DemoAuth.logout();
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => const LoginScreen()),
         (route) => false,
